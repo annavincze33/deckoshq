@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6FHNP7LNK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S6FHNP7LNK');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Build vs Buy Shopify Functions Replacements for Shopify Plus</title>
+    <meta name="description" content="How Shopify Plus teams should evaluate build vs buy decisions for Shopify Functions replacements. Compare native features, third-party apps, and custom Functions by risk, cost, control, and complexity.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Build vs Buy Shopify Functions Replacements for Shopify Plus">
+    <meta property="og:description" content="A practical guide for Shopify Plus teams comparing native features, apps, and custom Shopify Functions replacement paths.">
+    <meta property="og:url" content="https://deckoshq.com/build-vs-buy-shopify-functions-replacements.html">
+    <meta property="og:image" content="https://deckoshq.com/hero_23.webp">
+    <meta property="og:site_name" content="DeckOS HQ">
+    <meta property="og:image:alt" content="Build vs buy guide for Shopify Functions replacements">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Build vs Buy Shopify Functions Replacements for Shopify Plus">
+    <meta name="twitter:description" content="A practical guide for Shopify Plus teams comparing native features, apps, and custom Shopify Functions replacement paths.">
+    <meta name="twitter:image" content="https://deckoshq.com/hero_23.webp">
+    <meta name="twitter:image:alt" content="Build vs buy guide for Shopify Functions replacements">
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://deckoshq.com/build-vs-buy-shopify-functions-replacements.html">
+
+    <link rel="icon" type="image/png" href="https://deckoshq.com/deckos_logo8_fav.png">
+    <meta name="theme-color" content="#0B0F19">
+
+    <link rel="preload" as="image" href="https://deckoshq.com/hero_23.webp">
+
+    <!-- Article Structured Data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Build vs Buy Shopify Functions Replacements for Shopify Plus",
+  "description": "A practical guide for Shopify Plus teams comparing native features, apps, and custom Shopify Functions replacement paths.",
+  "url": "https://deckoshq.com/build-vs-buy-shopify-functions-replacements.html",
+  "image": "https://deckoshq.com/hero_23.webp",
+  "datePublished": "2026-03-13",
+  "dateModified": "2026-03-13",
+  "author": {
+    "@type": "Organization",
+    "name": "DeckOS HQ"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DeckOS HQ",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deckoshq.com/deckos_logo8.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://deckoshq.com/build-vs-buy-shopify-functions-replacements.html"
+  }
+}
+</script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should every Shopify Script be replaced with a custom Shopify Function?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Some use cases may be covered by native Shopify functionality, some by third-party apps, and only some require custom Shopify Functions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should Shopify Plus teams choose custom Shopify Functions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teams should consider custom Shopify Functions when the logic is business-critical, highly specific, difficult to model with native features, or when long-term control matters more than implementation simplicity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What factors matter most in build vs buy decisions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The most important factors are business criticality, implementation complexity, operational control, total cost, QA impact, long-term maintainability, and rollout risk."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DeckOS HQ",
+      "url": "https://deckoshq.com/",
+      "logo": "https://deckoshq.com/deckos_logo8.webp",
+      "description": "DeckOS HQ creates practical migration toolkits for Shopify Plus teams preparing for Shopify Scripts to Functions transitions.",
+      "sameAs": [
+        "https://deckoshq.gumroad.com/"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.344.0" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0B0F19',
+                        surface: '#151C2C',
+                        brand: {
+                            cyan: '#00E5FF',
+                            orange: '#FF5A00',
+                            orangeHover: '#FF7B00',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #94a3b8;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 30px rgba(0, 229, 255, 0.35);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF7B00 0%, #FF5A00 100%);
+            box-shadow: 0 4px 20px rgba(255, 90, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 90, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #FF5A00;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-cyan selection:text-dark relative">
+
+    <a href="#main-content" class="skip-to-content font-semibold px-4 py-2 rounded-br-lg">Skip to main content</a>
+
+    <nav aria-label="Main Navigation" class="fixed top-0 w-full z-50 glass border-b border-white/10 bg-dark/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="https://deckoshq.com/" class="font-display font-bold text-white flex items-center gap-3 group">
+                <img src="https://deckoshq.com/deckos_logo8.webp" alt="DeckOS HQ Logo" width="24" height="24" class="h-6 w-auto">
+                <span class="text-base sm:text-lg tracking-tight">DeckOS HQ</span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+                <a href="#quick-answer" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Quick Answer</a>
+                <a href="#decision-model" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Decision Model</a>
+                <a href="#comparison" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Comparison</a>
+                <a href="#when-to-build" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">When to Build</a>
+            </div>
+
+            <a href="https://deckoshq.com/#pricing"
+               class="btn-primary text-white font-semibold px-5 py-2 sm:px-6 sm:py-2.5 rounded-full flex items-center justify-center gap-2 text-xs sm:text-sm transition-transform hover:-translate-y-0.5">
+                See Toolkit <i data-lucide="arrow-right" class="w-4 h-4 hidden sm:inline-block"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden border-b border-white/5 min-h-[72vh] flex items-center justify-center bg-dark">
+            <div class="absolute inset-0 z-0">
+                <img src="hero_23.webp" alt="Build vs buy guide for Shopify Functions replacements" fetchpriority="high" width="3000" height="2000" class="w-full h-full object-cover object-center opacity-40 mix-blend-lighten">
+                <div class="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/60 to-dark/95"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(11,15,25,0.15)_0%,rgba(11,15,25,1)_100%)]"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 text-brand-cyan text-xs sm:text-sm font-bold tracking-widest mb-8 uppercase">
+                    Build vs Buy Guide
+                </div>
+
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.08] mb-6">
+                    Build vs Buy
+                    <br class="hidden sm:block" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-400 text-glow">
+                        Shopify Functions Replacements
+                    </span>
+                </h1>
+
+                <p class="text-white text-lg sm:text-xl font-medium leading-relaxed max-w-3xl mx-auto mb-4">
+                    A practical decision guide for Shopify Plus teams replacing legacy Shopify Scripts.
+                </p>
+
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-10">
+                    Use this page to compare native Shopify functionality, third-party apps, and custom Shopify Functions based on control, complexity, cost, QA impact, and operational risk.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#decision-model"
+                       class="w-full sm:w-auto btn-primary text-white font-semibold text-lg px-8 py-4 rounded-full flex items-center justify-center gap-2">
+                        View Decision Guide <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://deckoshq.com/#pricing"
+                       class="w-full sm:w-auto glass hover:bg-white/5 text-white font-semibold text-lg px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
+                        See the Toolkit
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK ANSWER -->
+        <section id="quick-answer" class="py-20 bg-surface/20 border-b border-white/5 scroll-mt-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-brand-cyan/20 shadow-xl">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Quick answer
+                    </div>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-5">
+                        What is the right replacement path?
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        There is no single replacement path for every Shopify Script. Some use cases can move to native Shopify features, some are better served by third-party apps, and some justify custom Shopify Functions. The right choice depends on business criticality, workflow complexity, control requirements, maintenance burden, and rollout risk.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY THIS DECISION MATTERS -->
+        <section class="py-24 bg-dark border-b border-white/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Why this matters
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Treating every replacement the same creates unnecessary risk
+                    </h2>
+                </div>
+
+                <div class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        One of the most common migration mistakes is assuming every legacy Script should be rebuilt as custom logic. In practice, that often increases implementation time, QA scope, and long-term maintenance without adding enough value.
+                    </p>
+                    <p>
+                        The opposite mistake also happens: teams choose the fastest replacement path without considering business control, edge cases, or long-term operational fit.
+                    </p>
+                    <p>
+                        A better approach is to evaluate each use case through a clear decision model before implementation begins.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DECISION MODEL -->
+        <section id="decision-model" class="py-24 bg-surface/20 border-b border-white/5 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Decision model
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        What should teams evaluate first?
+                    </h2>
+                    <p class="text-slate-400 text-lg max-w-3xl mx-auto">
+                        Use these criteria before deciding whether to go native, app-based, or custom.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-xl mb-3">Business criticality</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            How important is this logic to conversion, revenue protection, pricing integrity, or customer experience?
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-xl mb-3">Workflow complexity</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Is the behavior simple and standard, or highly conditional with multiple edge cases and exception paths?
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-xl mb-3">Control requirements</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Does the team need full ownership of logic and rollout behavior, or is a packaged solution acceptable?
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-xl mb-3">Operational cost</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            What is the real cost of implementation, QA, maintenance, support, and future changes over time?
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-xl mb-3">QA impact</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            How much validation complexity does the replacement option create before release?
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-xl mb-3">Rollout risk</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Which option creates the lowest operational risk at launch, given your current team structure and timeline?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARISON -->
+        <section id="comparison" class="py-24 bg-dark border-b border-white/5 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Comparison
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Native vs app vs custom Functions
+                    </h2>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-6">
+                    <div class="glass-panel p-8 rounded-3xl border border-white/10">
+                        <h3 class="text-white font-bold text-2xl mb-4">Native Shopify</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            Best when the use case is simple, well-supported, and does not require specialized custom logic.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li>• lower implementation overhead</li>
+                            <li>• simpler operational model</li>
+                            <li>• usually lower QA burden</li>
+                            <li>• less flexibility for unusual logic</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-3xl border border-white/10">
+                        <h3 class="text-white font-bold text-2xl mb-4">Third-party app</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            Best when packaged functionality covers the use case well enough and implementation speed matters.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li>• faster time to replacement</li>
+                            <li>• lower initial build effort</li>
+                            <li>• possible vendor dependency</li>
+                            <li>• may limit control or edge-case fit</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-3xl border border-brand-cyan/20">
+                        <h3 class="text-white font-bold text-2xl mb-4">Custom Functions</h3>
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            Best when the logic is highly specific, business-critical, or requires tighter long-term control.
+                        </p>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li>• highest flexibility</li>
+                            <li>• strongest control</li>
+                            <li>• more implementation and QA work</li>
+                            <li>• greater long-term ownership burden</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHEN TO BUILD -->
+        <section id="when-to-build" class="py-24 bg-surface/20 border-b border-white/5 scroll-mt-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        When custom build makes sense
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        When should teams choose custom Shopify Functions?
+                    </h2>
+                </div>
+
+                <ul class="space-y-5 text-slate-300 text-base sm:text-lg">
+                    <li class="glass p-5 rounded-xl border border-white/10">The logic is directly tied to revenue, conversion, or customer-specific policy</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">The use case is too specific for native capabilities or packaged apps</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">Long-term control matters more than short-term implementation speed</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">The team can support the added QA, maintenance, and operational ownership</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">The replacement needs tighter integration with internal workflow or business rules</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- WHEN TO BUY -->
+        <section class="py-24 bg-dark border-b border-white/5">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        When buying makes sense
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        When should teams avoid custom build?
+                    </h2>
+                </div>
+
+                <ul class="space-y-5 text-slate-300 text-base sm:text-lg">
+                    <li class="glass p-5 rounded-xl border border-white/10">The logic is relatively standard and well-covered elsewhere</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">Implementation speed matters more than deep customization</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">The team wants to reduce maintenance and release burden</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">Operational complexity is already high and should not be increased further</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">The added control of custom logic does not justify the full cost</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- DECISION SHORTLIST -->
+        <section class="py-24 bg-surface/20 border-b border-white/5">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Practical shortcut
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        A simple decision shortcut
+                    </h2>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-5">
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-lg mb-2">Go native</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            If the use case is simple, supported, and low-risk.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-lg mb-2">Use an app</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            If the use case is common, speed matters, and packaged tradeoffs are acceptable.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-brand-cyan/20">
+                        <h3 class="text-white font-bold text-lg mb-2">Build custom</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            If the use case is high-value, highly specific, and worth full ownership.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-24 bg-surface/40 border-b border-white/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 shadow-2xl bg-dark/60 backdrop-blur-xl">
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-5">
+                        Need a more structured replacement framework?
+                    </h2>
+
+                    <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+                        DeckOS HQ includes migration planning, prioritization, QA structure, rollout readiness, and execution assets built for Shopify Scripts to Functions migration work.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="https://deckoshq.com/#pricing"
+                           class="w-full sm:w-auto btn-primary text-white font-bold text-lg px-8 py-4 rounded-full flex items-center justify-center gap-2">
+                            See the Migration Toolkit <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+
+                        <a href="https://deckoshq.com/shopify-functions-migration-checklist.html"
+                           class="w-full sm:w-auto glass hover:bg-white/5 text-white font-semibold text-lg px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
+                            Read the Checklist
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-24 bg-dark border-b border-white/5">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="font-display text-3xl font-bold text-center text-white mb-12">Frequently Asked Questions</h2>
+
+                <div class="space-y-4">
+                    <details class="glass-panel p-5 rounded-xl cursor-pointer group">
+                        <summary class="font-display font-semibold text-white flex justify-between items-center outline-none">
+                            Should every Shopify Script be replaced with a custom Shopify Function?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pt-4 text-slate-400 text-sm leading-relaxed border-t border-white/5 mt-4">
+                            No. Some use cases fit native Shopify or app-based replacement better, while others justify custom Shopify Functions.
+                        </div>
+                    </details>
+
+                    <details class="glass-panel p-5 rounded-xl cursor-pointer group">
+                        <summary class="font-display font-semibold text-white flex justify-between items-center outline-none">
+                            When should Shopify Plus teams choose custom Shopify Functions?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pt-4 text-slate-400 text-sm leading-relaxed border-t border-white/5 mt-4">
+                            Teams should consider custom Functions when the logic is highly specific, business-critical, and worth the added ownership, QA, and maintenance effort.
+                        </div>
+                    </details>
+
+                    <details class="glass-panel p-5 rounded-xl cursor-pointer group">
+                        <summary class="font-display font-semibold text-white flex justify-between items-center outline-none">
+                            What factors matter most in build vs buy decisions?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pt-4 text-slate-400 text-sm leading-relaxed border-t border-white/5 mt-4">
+                            The biggest factors are business criticality, complexity, control requirements, long-term cost, QA scope, and rollout risk.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://deckoshq.com/deckos_logo8.webp" alt="DeckOS HQ Logo" width="24" height="24" class="h-6 w-auto">
+                        <span class="font-display font-bold text-white text-lg tracking-tight">DeckOS HQ</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        Practical migration toolkits and operational frameworks for Shopify Plus teams, agencies, and developers.
+                    </p>
+                    <div class="mt-6">
+                        <a href="mailto:deckoshqteam@gmail.com" class="text-brand-cyan hover:text-cyan-300 text-sm font-medium transition-colors flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i> deckoshqteam@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Guides</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="https://deckoshq.com/shopify-scripts-sunset-guide.html" class="hover:text-brand-cyan transition-colors">Shopify Scripts Sunset Guide</a></li>
+                        <li><a href="https://deckoshq.com/shopify-functions-migration-checklist.html" class="hover:text-brand-cyan transition-colors">Functions Migration Checklist</a></li>
+                        <li><a href="https://deckoshq.com/shopify-scripts-migration-qa-checklist.html" class="hover:text-brand-cyan transition-colors">Migration QA Checklist</a></li>
+                        <li><a href="https://deckoshq.com/build-vs-buy-shopify-functions-replacements.html" class="hover:text-brand-cyan transition-colors">Build vs Buy Replacements</a></li>
+                        <li><a href="https://deckoshq.com/" class="hover:text-brand-cyan transition-colors">Migration Toolkit</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal & Info</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="https://deckoshq.com/legal.html#terms" class="hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="https://deckoshq.com/legal.html#privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="https://deckoshq.com/legal.html#license" class="hover:text-white transition-colors">License & Usage Notes</a></li>
+                        <li><a href="https://deckoshq.gumroad.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Gumroad Store</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-slate-500 text-xs">&copy; 2026 DeckOS HQ. All rights reserved.</p>
+                <p class="text-slate-500 text-xs">DeckOS HQ is an independent resource and is not affiliated with Shopify Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

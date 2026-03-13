@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6FHNP7LNK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S6FHNP7LNK');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopify Functions Migration Checklist for Shopify Plus Teams</title>
+    <meta name="description" content="A practical Shopify Functions migration checklist for Shopify Plus teams. Audit scripts, prioritize work, choose replacement paths, validate with QA, and roll out with control.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Shopify Functions Migration Checklist for Shopify Plus Teams">
+    <meta property="og:description" content="A practical migration checklist for Shopify Plus teams preparing to replace Shopify Scripts with Shopify Functions.">
+    <meta property="og:url" content="https://deckoshq.com/shopify-functions-migration-checklist.html">
+    <meta property="og:image" content="https://deckoshq.com/hero_23.webp">
+    <meta property="og:site_name" content="DeckOS HQ">
+    <meta property="og:image:alt" content="Shopify Functions migration checklist for Shopify Plus teams">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shopify Functions Migration Checklist for Shopify Plus Teams">
+    <meta name="twitter:description" content="A practical migration checklist for Shopify Plus teams preparing to replace Shopify Scripts with Shopify Functions.">
+    <meta name="twitter:image" content="https://deckoshq.com/hero_23.webp">
+    <meta name="twitter:image:alt" content="Shopify Functions migration checklist for Shopify Plus teams">
+
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://deckoshq.com/shopify-functions-migration-checklist.html">
+
+    <link rel="icon" type="image/png" href="https://deckoshq.com/deckos_logo8_fav.png">
+    <meta name="theme-color" content="#0B0F19">
+
+    <link rel="preload" as="image" href="https://deckoshq.com/hero_23.webp">
+
+    <!-- Article Structured Data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Shopify Functions Migration Checklist for Shopify Plus Teams",
+  "description": "A practical migration checklist for Shopify Plus teams preparing to replace Shopify Scripts with Shopify Functions.",
+  "url": "https://deckoshq.com/shopify-functions-migration-checklist.html",
+  "image": "https://deckoshq.com/hero_23.webp",
+  "datePublished": "2026-03-13",
+  "dateModified": "2026-03-13",
+  "author": {
+    "@type": "Organization",
+    "name": "DeckOS HQ"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DeckOS HQ",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://deckoshq.com/deckos_logo8.webp"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://deckoshq.com/shopify-functions-migration-checklist.html"
+  }
+}
+</script>
+
+    <!-- FAQ Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What should Shopify Plus teams do first in a Shopify Functions migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teams should first inventory all existing Shopify Scripts, document their behavior, identify business-critical logic, and prioritize the work by risk and complexity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do all Shopify Scripts need custom Functions replacements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Some Script behavior may be replaced by native Shopify capabilities or third-party apps, while some use cases may require custom Shopify Functions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should be included in Shopify Functions migration QA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teams should validate expected checkout behavior, edge cases, discount logic, shipping logic, payment rules, regression risk, ownership, and rollout readiness before release."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DeckOS HQ",
+      "url": "https://deckoshq.com/",
+      "logo": "https://deckoshq.com/deckos_logo8.webp",
+      "description": "DeckOS HQ creates practical migration toolkits for Shopify Plus teams preparing for Shopify Scripts to Functions transitions.",
+      "sameAs": [
+        "https://deckoshq.gumroad.com/"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.344.0" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0B0F19',
+                        surface: '#151C2C',
+                        brand: {
+                            cyan: '#00E5FF',
+                            orange: '#FF5A00',
+                            orangeHover: '#FF7B00',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #94a3b8;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.4) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 30px rgba(0, 229, 255, 0.35);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF7B00 0%, #FF5A00 100%);
+            box-shadow: 0 4px 20px rgba(255, 90, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 90, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #FF5A00;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-cyan selection:text-dark relative">
+
+    <a href="#main-content" class="skip-to-content font-semibold px-4 py-2 rounded-br-lg">Skip to main content</a>
+
+    <nav aria-label="Main Navigation" class="fixed top-0 w-full z-50 glass border-b border-white/10 bg-dark/80 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="https://deckoshq.com/" class="font-display font-bold text-white flex items-center gap-3 group">
+                <img src="https://deckoshq.com/deckos_logo8.webp" alt="DeckOS HQ Logo" width="24" height="24" class="h-6 w-auto">
+                <span class="text-base sm:text-lg tracking-tight">DeckOS HQ</span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+                <a href="#quick-answer" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Quick Answer</a>
+                <a href="#checklist" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Checklist</a>
+                <a href="#qa" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">QA</a>
+                <a href="#workflow" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Workflow</a>
+            </div>
+
+            <a href="https://deckoshq.com/#pricing"
+               class="btn-primary text-white font-semibold px-5 py-2 sm:px-6 sm:py-2.5 rounded-full flex items-center justify-center gap-2 text-xs sm:text-sm transition-transform hover:-translate-y-0.5">
+                See Toolkit <i data-lucide="arrow-right" class="w-4 h-4 hidden sm:inline-block"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden border-b border-white/5 min-h-[72vh] flex items-center justify-center bg-dark">
+            <div class="absolute inset-0 z-0">
+                <img src="hero_23.webp" alt="Shopify Functions migration checklist for Shopify Plus teams" fetchpriority="high" width="3000" height="2000" class="w-full h-full object-cover object-center opacity-40 mix-blend-lighten">
+                <div class="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/60 to-dark/95"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(11,15,25,0.15)_0%,rgba(11,15,25,1)_100%)]"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 text-brand-cyan text-xs sm:text-sm font-bold tracking-widest mb-8 uppercase">
+                    Shopify Functions Migration Checklist
+                </div>
+
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.08] mb-6">
+                    Shopify Functions Migration Checklist
+                    <br class="hidden sm:block" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-blue-400 text-glow">
+                        for Shopify Plus Teams
+                    </span>
+                </h1>
+
+                <p class="text-white text-lg sm:text-xl font-medium leading-relaxed max-w-3xl mx-auto mb-4">
+                    A practical checklist for teams replacing Shopify Scripts with Shopify Functions.
+                </p>
+
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mb-10">
+                    Use this page to audit existing logic, prioritize migration work, choose the right replacement path, validate with QA, and roll out with more control.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#checklist"
+                       class="w-full sm:w-auto btn-primary text-white font-semibold text-lg px-8 py-4 rounded-full flex items-center justify-center gap-2">
+                        View Checklist <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://deckoshq.com/#pricing"
+                       class="w-full sm:w-auto glass hover:bg-white/5 text-white font-semibold text-lg px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
+                        See the Toolkit
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK ANSWER -->
+        <section id="quick-answer" class="py-20 bg-surface/20 border-b border-white/5 scroll-mt-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-brand-cyan/20 shadow-xl">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Quick answer
+                    </div>
+                    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mb-5">
+                        What should teams do first?
+                    </h2>
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        Shopify Plus teams should start by inventorying every Script, documenting what each one does, ranking them by business risk, and deciding whether each use case should be replaced with native Shopify functionality, a third-party app, or custom Shopify Functions. Only after that should teams move into implementation, QA, and rollout planning.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY A CHECKLIST -->
+        <section class="py-24 bg-dark border-b border-white/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Why this matters
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Migration work breaks down when teams skip structure
+                    </h2>
+                </div>
+
+                <div class="space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Shopify Functions migration is not only a development task. It is also an audit, prioritization, QA, and rollout problem. Teams that start coding too early often discover missing context later.
+                    </p>
+                    <p>
+                        A checklist helps teams reduce blind spots, define ownership, and move through the transition in a more controlled order — instead of treating migration as a collection of unrelated technical tasks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHECKLIST -->
+        <section id="checklist" class="py-24 bg-surface/20 border-b border-white/5 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Core checklist
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Shopify Functions migration checklist
+                    </h2>
+                    <p class="text-slate-400 text-lg max-w-3xl mx-auto">
+                        Use this as a practical sequence for planning and validating Shopify Scripts to Shopify Functions migration work.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-4">01</div>
+                        <h3 class="text-white font-bold text-xl mb-3">Inventory all Scripts</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Build a complete list of active and inactive Scripts, including any logic that has been partially replaced or poorly documented.
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-4">02</div>
+                        <h3 class="text-white font-bold text-xl mb-3">Document current behavior</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Record exactly what each Script changes in checkout, including discounts, shipping behavior, payment rules, and exceptions.
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-4">03</div>
+                        <h3 class="text-white font-bold text-xl mb-3">Identify business-critical logic</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Separate high-impact logic from lower-risk behavior so the migration sequence reflects real operational risk.
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-4">04</div>
+                        <h3 class="text-white font-bold text-xl mb-3">Rank by priority</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Score each migration item by business impact, technical complexity, and urgency so the team can work in a rational order.
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-4">05</div>
+                        <h3 class="text-white font-bold text-xl mb-3">Choose replacement path</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Decide whether each Script should move to native Shopify capabilities, a third-party app, or custom Shopify Functions.
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-4">06</div>
+                        <h3 class="text-white font-bold text-xl mb-3">Assign ownership</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Clarify who owns planning, implementation, QA, sign-off, and rollout decisions across the team.
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-4">07</div>
+                        <h3 class="text-white font-bold text-xl mb-3">Define QA scenarios</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Build a validation set covering expected behavior, regression risk, edge cases, and high-value checkout paths.
+                        </p>
+                    </div>
+
+                    <div class="glass p-7 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-4">08</div>
+                        <h3 class="text-white font-bold text-xl mb-3">Prepare rollout controls</h3>
+                        <p class="text-slate-400 leading-relaxed">
+                            Define launch readiness, go/no-go criteria, communication ownership, and fallback thinking before release.
+                        </p>
+                    </div>
+
+                </div>
+<p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto mt-10 text-center">
+A strong migration plan usually starts with visibility, then prioritization, then replacement decisions, then QA and rollout control.
+</p>
+            </div>
+        </section>
+
+        <!-- REPLACEMENT PATHS -->
+        <section class="py-24 bg-dark border-b border-white/5">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Replacement decisions
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        Not every Script needs the same migration path
+                    </h2>
+                </div>
+
+                <div class="grid sm:grid-cols-3 gap-5">
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-lg mb-2">Native Shopify</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Some logic may no longer need custom handling if native features cover the use case cleanly.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                        <h3 class="text-white font-bold text-lg mb-2">Third-party apps</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Some teams may prefer app-based replacement where the operational tradeoff makes sense.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-brand-cyan/20">
+                        <h3 class="text-white font-bold text-lg mb-2">Custom Functions</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Business-critical or highly specific logic may still require custom Shopify Functions implementation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QA -->
+        <section id="qa" class="py-24 bg-surface/20 border-b border-white/5 scroll-mt-24">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-14">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        QA and validation
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        What should be included in migration QA?
+                    </h2>
+                </div>
+
+                <ul class="space-y-5 text-slate-300 text-base sm:text-lg">
+                    <li class="glass p-5 rounded-xl border border-white/10">Expected checkout behavior after replacement</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">Discount logic and edge-case validation</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">Shipping and payment rule verification</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">Regression checks on high-value flows</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">Ownership and sign-off clarity before release</li>
+                    <li class="glass p-5 rounded-xl border border-white/10">Go/no-go and rollback readiness</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- WORKFLOW -->
+        <section id="workflow" class="py-24 bg-dark border-b border-white/5 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <div class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-4">
+                        Recommended order
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                        A practical migration workflow
+                    </h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-3">1</div>
+                        <h3 class="text-white font-bold mb-2">Audit</h3>
+                        <p class="text-slate-400 text-sm">Build a complete Script inventory.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-3">2</div>
+                        <h3 class="text-white font-bold mb-2">Prioritize</h3>
+                        <p class="text-slate-400 text-sm">Rank work by risk and complexity.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-3">3</div>
+                        <h3 class="text-white font-bold mb-2">Replace</h3>
+                        <p class="text-slate-400 text-sm">Choose the right replacement path.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-3">4</div>
+                        <h3 class="text-white font-bold mb-2">Validate</h3>
+                        <p class="text-slate-400 text-sm">Run structured QA before launch.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10">
+                        <div class="text-brand-cyan font-display font-bold text-3xl mb-3">5</div>
+                        <h3 class="text-white font-bold mb-2">Roll out</h3>
+                        <p class="text-slate-400 text-sm">Launch with control and ownership.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-24 bg-surface/40 border-b border-white/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 shadow-2xl bg-dark/60 backdrop-blur-xl">
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-5">
+                        Need more than a checklist?
+                    </h2>
+
+                    <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+                        DeckOS HQ provides a full migration toolkit with a playbook, tracker, QA matrix, triage guide, and developer support assets for Shopify Scripts to Functions migration.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="https://deckoshq.com/#pricing"
+                           class="w-full sm:w-auto btn-primary text-white font-bold text-lg px-8 py-4 rounded-full flex items-center justify-center gap-2">
+                            See the Migration Toolkit <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+
+                        <a href="https://deckoshq.com/shopify-scripts-sunset-guide.html"
+                           class="w-full sm:w-auto glass hover:bg-white/5 text-white font-semibold text-lg px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2">
+                            Read the Sunset Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-24 bg-dark border-b border-white/5">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="font-display text-3xl font-bold text-center text-white mb-12">Frequently Asked Questions</h2>
+
+                <div class="space-y-4">
+                    <details class="glass-panel p-5 rounded-xl cursor-pointer group">
+                        <summary class="font-display font-semibold text-white flex justify-between items-center outline-none">
+                            What should Shopify Plus teams do first in a Shopify Functions migration?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pt-4 text-slate-400 text-sm leading-relaxed border-t border-white/5 mt-4">
+                            Teams should begin with Script inventory, behavior mapping, business-risk review, and prioritization before implementation starts.
+                        </div>
+                    </details>
+
+                    <details class="glass-panel p-5 rounded-xl cursor-pointer group">
+                        <summary class="font-display font-semibold text-white flex justify-between items-center outline-none">
+                            Do all Shopify Scripts need custom Functions replacements?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pt-4 text-slate-400 text-sm leading-relaxed border-t border-white/5 mt-4">
+                            No. Some use cases may be handled by native Shopify capabilities or apps, while others may still require custom Shopify Functions.
+                        </div>
+                    </details>
+
+                    <details class="glass-panel p-5 rounded-xl cursor-pointer group">
+                        <summary class="font-display font-semibold text-white flex justify-between items-center outline-none">
+                            What should be included in migration QA?
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <div class="pt-4 text-slate-400 text-sm leading-relaxed border-t border-white/5 mt-4">
+                            Teams should validate expected behavior, edge cases, regression risk, ownership, sign-off, and rollout readiness before launch.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-12 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="https://deckoshq.com/deckos_logo8.webp" alt="DeckOS HQ Logo" width="24" height="24" class="h-6 w-auto">
+                        <span class="font-display font-bold text-white text-lg tracking-tight">DeckOS HQ</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        Practical migration toolkits and operational frameworks for Shopify Plus teams, agencies, and developers.
+                    </p>
+                    <div class="mt-6">
+                        <a href="mailto:deckoshqteam@gmail.com" class="text-brand-cyan hover:text-cyan-300 text-sm font-medium transition-colors flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i> deckoshqteam@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+              <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Guides</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="https://deckoshq.com/shopify-scripts-sunset-guide.html" class="hover:text-brand-cyan transition-colors">Shopify Scripts Sunset Guide</a></li>
+                        <li><a href="https://deckoshq.com/shopify-functions-migration-checklist.html" class="hover:text-brand-cyan transition-colors">Functions Migration Checklist</a></li>
+                        <li><a href="https://deckoshq.com/shopify-scripts-migration-qa-checklist.html" class="hover:text-brand-cyan transition-colors">Migration QA Checklist</a></li>
+                        <li><a href="https://deckoshq.com/build-vs-buy-shopify-functions-replacements.html" class="hover:text-brand-cyan transition-colors">Build vs Buy Replacements</a></li>
+                        <li><a href="https://deckoshq.com/" class="hover:text-brand-cyan transition-colors">Migration Toolkit</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Legal & Info</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="https://deckoshq.com/legal.html#terms" class="hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="https://deckoshq.com/legal.html#privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="https://deckoshq.com/legal.html#license" class="hover:text-white transition-colors">License & Usage Notes</a></li>
+                        <li><a href="https://deckoshq.gumroad.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Gumroad Store</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-slate-500 text-xs">&copy; 2026 DeckOS HQ. All rights reserved.</p>
+                <p class="text-slate-500 text-xs">DeckOS HQ is an independent resource and is not affiliated with Shopify Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
